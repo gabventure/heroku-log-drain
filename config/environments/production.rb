@@ -1,6 +1,8 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+  config.hosts << /.*\.railway\.app/
+
   # Code is not reloaded between requests.
   config.enable_reloading = false
 
@@ -21,8 +23,6 @@ Rails.application.configure do
 
   # Assume all access to the app is happening through a SSL-terminating reverse proxy.
   config.assume_ssl = true
-
-  config.hosts << /.*\.railway\.app/
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   config.force_ssl = true
