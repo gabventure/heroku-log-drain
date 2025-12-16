@@ -6,7 +6,7 @@ class LogUploadJob < ApplicationJob
 
     Aws::S3::Client.new.put_object(
       bucket: ENV["S3_BUCKET"],
-      key: key,
+      key: key, 
       body: logs
     )
   end
